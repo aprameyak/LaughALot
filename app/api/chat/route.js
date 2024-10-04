@@ -13,6 +13,10 @@ export async function GET(req) {
       { role: "system", content: systemPrompt },
       { role: "user", content: userPrompt },
     ],
+    temperature: 1,
+    top_p: 0.5,
+    top_k: 0.5,
+    max_tokens: 150,
   });
   return NextResponse.json({ message: completion.choices[0].message.content})
 }
