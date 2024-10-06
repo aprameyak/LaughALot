@@ -1,29 +1,28 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
-
+import { ChatOpenAI } from "@langchain/openai";
 const openai = new OpenAI();
 
-const systemPrompt = "You are a jokemaker.";
+const systemPrompt = "Write a joke about the following topic and send it without additional text: ";
 const userPrompt = "Write a joke about any topic and send it without additional text";
-
 export async function GET(req) {
-  const completion = await openai.chat.completions.create({
-    model: "gpt-4o", // Verify this model name
-    messages: [
-      { role: "system", content: systemPrompt },
-      { role: "user", content: userPrompt },
-    ],
+  const llm = new ChatOpenAI({
+    topP: 1,
+    temperature: 0.9,
+    apiKey: process.env.OPENAI_API_KEY,
+    model: "gpt-4o",
   });
-  return NextResponse.json({ message: completion.choices[0].message.content})
+  const response = await llm.invoke(userPrompt);
+  return NextResponse.json({ message: response.content})
 }
 export async function POST(req) {
-  const { topic } = await req.json();
-  const completion = await openai.chat.completions.create({
-    model: "gpt-4o", // Verify this model name
-    messages: [
-      { role: "system", content: systemPrompt },
-      { role: "user", content: "Write a joke about " + topic + "without additional text" },
-    ],
+  const llm = new ChatOpenAI({
+    topP: 1,
+    temperature: 0.9,
+    apiKey: process.env.OPENAI_API_KEY,
+    model: "gpt-4o",
   });
-  return NextResponse.json({ message: completion.choices[0].message.content})
+  const { topic } = await req.json();
+  const response = await llm.invoke(systemPrompt + topic);
+  return NextResponse.json({ message: response.content})
 }
