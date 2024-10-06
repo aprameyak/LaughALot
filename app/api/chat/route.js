@@ -11,6 +11,7 @@ export async function GET(req) {
     temperature: 0.9,
     apiKey: process.env.OPENAI_API_KEY,
     model: "gpt-4o",
+    maxTokens: 200,
   });
   const response = await llm.invoke(userPrompt);
   return NextResponse.json({ message: response.content})
@@ -21,6 +22,7 @@ export async function POST(req) {
     temperature: 0.9,
     apiKey: process.env.OPENAI_API_KEY,
     model: "gpt-4o",
+    maxTokens: 200,
   });
   const { topic } = await req.json();
   const response = await llm.invoke(systemPrompt + topic);
