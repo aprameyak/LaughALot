@@ -18,3 +18,7 @@ LaughALot is a Generative AI-powered joke generator that delivers laughs on dema
 - **Authentication**: Clerk (Email/Gmail login)
 - **CI/CD**: GitHub Actions
 - **Hosting**: Vercel
+
+## Live Deployment
+
+- **View here**: https://laughalot.vercel.app/
