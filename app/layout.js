@@ -6,6 +6,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "LaughALot",
   description: "LaughALot, the AI Joke Generator",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({ children }) {
