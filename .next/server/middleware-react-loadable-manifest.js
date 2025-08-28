@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST='{"app/page.tsx -> @clerk/nextjs":{"id":6981,"files":["static/chunks/981.0b49b57b681bc7ff.js","static/chunks/431.756d20a407d6a6ca.js"]}}';

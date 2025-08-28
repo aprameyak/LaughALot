@@ -1,4 +1,4 @@
-// File: /Users/aprameyakannan/Documents/JokeMaker/app/api/chat/route.js
+// File: /Users/aprameyakannan/Documents/GitHub/LaughALot/app/api/chat/route.ts
 import * as entry from '../../../../../app/api/chat/route.js'
 import type { NextRequest } from 'next/server.js'
 

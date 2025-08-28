@@ -1,9 +1,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "LaughALot",
   description: "LaughALot, the AI Joke Generator",
   icons: {
@@ -13,10 +15,12 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
     </html>
   );
 }
+
+
