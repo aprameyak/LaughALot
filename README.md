@@ -1,3 +1,5 @@
+This project continues in [Humorous](https://github.com/aprameyak/Humorous).
+
 # LaughALot
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white&style=for-the-badge)
